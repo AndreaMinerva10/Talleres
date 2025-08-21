@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD LocalStorage</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+    body {
+      background-image: url('img/fondo.png');
+      background-size:contain;
+      background-repeat: repeat;
+      background-attachment: fixed;
+      background-position: center center;
+    }
+  </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-7">
+                <h1 class="text-center display-4 fw-bold border rounded bg-body-tertiary p-1 mt-3 text-warning ">CRUD PEDIDOS</h1>
+            </div>
+            <div class="col-7">
+                <form class="p-4 border rounded bg-body-tertiary">
+                    <div class="mb-3">
+                        <label class="form-label">Cliente</label>
+                        <input type="text" class="cliente form-control" />
+                    </div>
+                    <div class="mb-3">
+                    <label class="form-label">Producto</label>
+                        <select class="producto form-select">
+                            <option selected value="">Selecciona un producto</option><option value="Pizza">Pizza</option>
+                            <option value="Lasaña">Lasaña</option>
+                            <option value="Pasta">Pasta</option>
+                            <option value="Hamburguesa">Hamburguesa</option>
+                            <option value="Perro">Perro</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Precio</label>
+                        <input type="number" min="20000" class="precio form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Imagen</label>
+                        <input type="url" class="imagen form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Observacion</label>
+                        <input type="text" class="observacion form-control" />
+                    </div>
+                    <button type="button" class="btn-guardar btn btn-primary mt-3">Guardar Pedido</button>
+                    <button type="button" class="d-none btn-actualizar btn btn-success mt-3">Actualizar Pedido</button>
+
+                    <div class="mb-3 mt-3">
+                        <label class="form-label">Buscar por Nombre</label>
+                        <input type="text" class="buscar form-control" />
+                    </div>
+                    <button type="button" class=" btn-buscar btn btn-success">Buscar</button>
+                    <button type="button" class=" btn-pdf btn btn-info">Exportar pdf</button>
+
+                </form>
+        </div>
+            <div class="col-7">
+                <table class="table mt-4" id="tablaPedidos">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Cliente</th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Imagen</th>
+                            <th>Descripcion</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="localstorage.js"></script>
+
+</body>
+</html>
