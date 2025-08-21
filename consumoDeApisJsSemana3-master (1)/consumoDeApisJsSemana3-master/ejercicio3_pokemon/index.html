@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <style>
+        body {
+            background-image: url("img/fondo.png"); 
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        .container, .Pokedex, .d-grid, h1 {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .Pokedex, .d-grid {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="display-4 text-primary text-center mt-4">Pokedex</h1>
+    <div class="Pokedex input-group input-group-lg mt-5">
+        <span class="input-group-text text-primary fw-bold" id="inputGroup-sizing-lg">Pokémon</span>
+        <input type="text" class="form-control" placeholder="Ingresa el Pokémon a buscar" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" list="pokemonSuggestions">
+        <datalist id="pokemonSuggestions"> 
+        </datalist>
+    </div>
+    
+    <div class="d-grid gap-2 col-6 mx-auto mt-4">
+        <button class="btn-consultar btn btn-warning text-primary fw-semibold" type="button">¡¡Yo te elijo!!</button>
+    </div>
+
+    <div class="container Pokedex-resultado mt-4 fs-1 mt-5">
+        </div>
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
